@@ -8,6 +8,8 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.preference.PreferenceManager;
 
+import androidx.annotation.Nullable;
+
 import com.snowplowanalytics.snowplow.tracker.Tracker;
 import com.snowplowanalytics.snowplow.tracker.constants.Parameters;
 import com.snowplowanalytics.snowplow.tracker.constants.TrackerConstants;
@@ -107,6 +109,7 @@ public class InstallTracker {
         }
     }
 
+    @Nullable
     static public SelfDescribingJson getApplicationContext(Context context) {
         try {
             PackageInfo pInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
